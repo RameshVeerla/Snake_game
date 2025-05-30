@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-T">
+    <title>Snake Game</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython.min.js">
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.10.7/brython_stdlib.js">
+    </script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin-top: 20px;
+        }
+        #game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        canvas {
+            border: 1px solid #333;
+            background-color: #fff;
+        }
+        #controls {
+            margin-top: 10px;
+            text-align: center;
+        }
+        #score-board {
+            margin-top: 15px;
+            font-size: 1.2em;
+        }
+        #restart-button {
+            margin-top: 10px;
+            padding: 8px 15px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #restart-button:hover {
+            background-color: #45a049;
+        }
+        #game-over-message {
+            color: red;
+            font-size: 1.5em;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body onload="brython()">
+
+    <script type="text/python" src="snake_game.py"></script>
+
+    <div id="game-container">
+        <h2>Python Snake Game</h2>
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+        <div id="score-board">
+            Score: <span id="current-score">0</span>
+            <br>
+            Highest Score Today: <span id="highest-score">0</span>
+        </div>
+        <div id="controls">
+            Use Arrow Keys to Move
+        </div>
+        <div id="game-over-message" style="display:none;">Game Over!</div>
+        <button id="restart-button" style="display:none;">Restart Game</button>
+    </div>
+
+</body>
+
+</html>
